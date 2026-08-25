@@ -73,7 +73,6 @@ document.querySelector("#add-form").addEventListener("submit", async event => {
     await membersRef.transaction(current => {
       const currentMembers = current || {};
       if (currentMembers[name]) return;
-      Object.values(currentMembers).forEach((member, index) => { member["shadow value"] = index + 1; });
       currentMembers[name] = { "cookie value": 0, "shadow value": Object.keys(currentMembers).length + 1 };
       return currentMembers;
     });
